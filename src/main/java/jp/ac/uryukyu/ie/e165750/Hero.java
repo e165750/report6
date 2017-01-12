@@ -10,6 +10,32 @@ public class Hero extends LivingThing {
     }
 
     @Override //オーバーライドする事によってスーパークラスから継承したメソッドに上書きすることができる
+
+    public void attack(LivingThing opponent) {
+        int damage;
+
+        damage = (int) (Math.random() * attack);
+        if (dead == false && damage>0) {
+
+            double d = Math.random();
+            if(d < 0.3){
+               damage  += damage;
+                System.out.printf("%sの攻撃！会心の一撃！！%sに%dのダメージを与えた！！\n",name, opponent.getName(), damage);
+            }
+            else{
+                System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, opponent.getName(), damage);
+            }
+
+        } else if(dead == false && damage==0) {
+            System.out.printf("%sの攻撃！,,,だが、%sは攻撃を回避した！\n",name, opponent.getName());
+        }
+        opponent.wounded(damage);
+
+    }
+
+
+
+
     public void wounded(int damage) {
         hitPoint -= damage;
         if (hitPoint < 0) {
