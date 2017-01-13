@@ -22,7 +22,7 @@ public class Enemy extends LivingThing {
 
             double d = Math.random();
             if(d < 0.2){
-                damage  += damage;
+                damage = damage * 2;
                 System.out.printf("%sの攻撃！痛恨の一撃！！%sに%dのダメージを与えた！！\n",name, opponent.getName(), damage);
 
             }

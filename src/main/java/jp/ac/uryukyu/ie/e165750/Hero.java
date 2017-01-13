@@ -19,7 +19,7 @@ public class Hero extends LivingThing {
 
             double d = Math.random();
             if(d < 0.3){
-               damage  += damage;
+                damage = damage * 2;
                 System.out.printf("%sの攻撃！会心の一撃！！%sに%dのダメージを与えた！！\n",name, opponent.getName(), damage);
             }
             else{
